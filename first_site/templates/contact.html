@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block 'title' %}<title>Contact</title>{% endblock 'title' %}
+{% block 'body' %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show " role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<form method="POST" action="/contact">
+{% csrf_token %}
+    <div class="container py-2 col-md-6 my-3">
+        <h2 class="text-center py-3">Contact Us</h2>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="name" name="name" class="form-control" id="exampleFormControlInput1"
+                placeholder="Please Enter Your Name ">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                placeholder=".....@gmail.com">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Phone Number</label>
+            <input type="number" name="number" class="form-control" id="exampleFormControlInput1"
+                placeholder="Please Enter the phone Number">
+        </div>
+        <div class="mb-3">
+            <label for="area" class="form-label">Tell Something about You</label>
+            <textarea class="form-control" type="area" name="area" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock 'body' %}
