@@ -26,11 +26,20 @@ def newssource(request):
     title=[]
     desc=[]
     img=[]
+    lis=[]
     for i in range(len(articles)):
         article=articles[i]
         title.append(article['title'])
         desc.append(article['description'])
         img.append(article['urlToImage'])
-    mylist=zip(title,desc,img)
-    return render (request,'news.html',context={'mylist': mylist})
+        if i%2==0:
+            lis.append(0)
+        else:
+            lis.append(1)
+        
+    mylist=zip(title,desc,img,lis)
+    return render (request,'news.html',context={'mylist': mylist })
 
+
+def blog(request):
+    return render(request,'blog.html')
