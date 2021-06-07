@@ -3,11 +3,67 @@
 
 {% block 'body' %}
 
-<h1>blogs</h1>
+<div class="container">
+    <h1 class="text-center py-3">Blogs</h1>
+    <hr class="featurette-divider">
 
 
+    <article class="blog-post" style="margin-bottom: 5%;">
+        <h2 class="blog-post-title">New feature</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
+            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+            demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <ul>
+            <li>First list item</li>
+            <li>Second list item with a longer description</li>
+            <li>Third list item to close it out</li>
+        </ul>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
+            repetitive body text used throughout.</p>
+    </article>
+    <hr class="featurette-divider">
+
+</div>
+
+<div class="container" style="padding-bottom: 3%;">
+    <!-- Button trigger modal -->
+    <div class="text-center">
+    <button type="button" class="btn btn-primary text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Write a blog
+    </button>
+</div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Writer:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="message-text" class="col-form-label">Article:</label>
+                          <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock 'body' %}
-
-
-
-
